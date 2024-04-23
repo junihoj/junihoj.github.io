@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import logo from '../Assets/andres-choque-logo.png'
 import './Navbar.css'
 import { library } from '@fortawesome/fontawesome-svg-core';
