@@ -252,7 +252,7 @@ function Home() {
                     ? formik.errors.message
                     : ''}
                 </span>
-                <button type="submit" className="btn btncv" onClick={formik.handleSubmit}>{formik.isSubmitting ? "sending..." : "Submit"}</button>
+                <button type="submit" className="btn btncv" onClick={(e:any)=>formik.handleSubmit()}>{formik.isSubmitting ? "sending..." : "Submit"}</button>
               </div>
               <span id="submit-msg"></span>
             </div>
