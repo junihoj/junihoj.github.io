@@ -13,7 +13,7 @@ const useHandleContactForm = ()=>{
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzEutxtVo-QvrnEJYgPJeaNsfiX6gOAJWePhfQtxY4Qvwuu1hLw5grVdjagi1ZIf16kzQ/exec';
     const validationSchema = Yup.object().shape({
         name: Yup.string().required('Name is required'),
-        email:Yup.string().email('Not a valid email').required('email is required'),
+        email:Yup.string().email('Invalid email format').required('email is required'),
         message: Yup.string().required('Message is required')
     });
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import logo from '../Assets/andres-choque-logo.png'
+import logo from '/Images/coding.svg'
 import './Navbar.css'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -24,7 +24,7 @@ function Navbar() {
     <div className='navbar'>
         <nav>
             <a href='#header'>
-                <img src={logo} alt="Andres-Choque-Logo" className='logo'/>
+                <img src={logo} alt="code" className='logo'/>
             </a>
             <ul className={menuOpen ? "active" : ""}>
                 <li><a href="#header">Home</a></li>

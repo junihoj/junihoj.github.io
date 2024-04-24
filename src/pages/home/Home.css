@@ -22,7 +22,7 @@
 }
 
 .header-text {
-    margin-top: 20%;
+    margin-top: 15%;
     font-size: 30px;
     width:100%;
 }
@@ -357,6 +357,13 @@ strong {
     cursor: pointer;
 
 }
+.error-text{
+    color:#d94d27;
+    font-size: 14px;
+}
+.text-area-error{
+    display:block;
+}
 
 .copyright {
     width: 100%;
@@ -367,6 +374,18 @@ strong {
 
 }
 
+.experience-header-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.experience-header-text > div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
 /**********Responsive section**********/
 
 @media screen and (max-width: 800px) {
@@ -375,6 +394,10 @@ strong {
         font-size: 18px;
         margin-right: 40px;
         width:100%;
+    }
+    .error-text{
+        color:#d94d27;
+        font-size: 12px;
     }
 
     .header-text h1 {

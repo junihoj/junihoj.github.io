@@ -11,7 +11,7 @@ import { faInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-
 import useHandleContactForm from '../../hooks/form/use-handle-contact-form';
 
 function Home() {
-  const {formik} = useHandleContactForm();
+  const { formik } = useHandleContactForm();
   // About section functionality
 
   const [activeTab, setActiveTab] = useState('skills');
@@ -23,7 +23,7 @@ function Home() {
   const handleDownloadResume = async () => {
     try {
       // Fetch the resume file from the public folder
-      const response = await fetch('/Andres-Choque-Resume.pdf');
+      const response = await fetch('/EZE ONYEKACHUKWU Resume 01.pdf');
       const blob = await response.blob();
 
       // Create a URL for the blob object
@@ -60,7 +60,7 @@ function Home() {
   // Contact form functionality
 
   // Icon library
-  if(formik.errors){
+  if (formik.errors) {
     console.log("FORMIK ERROR ", formik.errors)
   }
   library.add(faCode, faPenRuler, faMicrochip, faLink, faEnvelope, faInstagram, faLinkedin, faGithub)
@@ -113,19 +113,30 @@ function Home() {
               </div>
 
               <div className={`tab-conts ${activeTab === 'experience' ? 'act-tab' : ''}`} id="experience">
-                <ul>
-                  <li><span>Oct. 2023 &nbsp;-&nbsp; Present</span><br />Freelance Web Developer</li>
-                  <li><span>Sep. 2023 &nbsp;-&nbsp; Present</span><br />Junior Software Engineer | CyberZek</li>
-                  <li><span>July 2023 &nbsp;-&nbsp; Sep 2023</span><br />Software Engineer Intern | CyberZek</li>
-                  <li><span>May 2022 &nbsp;-&nbsp; Aug 2022</span><br />Software Developer Intern | Samaritan's Purse</li>
-                  <li><span>May 2021 &nbsp;-&nbsp; Jul 2021</span><br />Web Developer Intern | CREOTEC</li>
-                </ul>
+                <div>
+                  <div className='experience-header-text'>
+                    <div>
+                      <p>Full-stack Devloper(MERN-STACK)</p>
+                      <p>Punch Group (Remote) <span><a href='https://punch.cool'></a></span></p>
+                    </div>
+                    <p>APRIL 2022 - MARCH 2024</p>
+                  </div>
+
+                  <ul>
+                    <li className="experience-bullet">•	Spearheaded the development of frontend solutions using React, Material UI, and Typescript, resulting in a 20% improvement in user experience and system efficiency.</li>
+                    <li className="experience-bullet">•	Designed and implemented scalable database structures using MongoDB, optimizing data retrieval and storage processes.</li>
+                    <li className="experience-bullet">•	Developed and maintained robust RESTful APIs using Node.js and Express.js, ensuring efficient data flow and system integration.</li>
+                    <li className="experience-bullet">•	Ensured high-quality code by conducting thorough testing before submitting builds to QA, minimizing post-production issues.</li>
+                    <li className="experience-bullet">•	Although I was employed as MERN but also helped out in building python project using Django and I also did web scrapping with selenium for lead-generation because I also an experienced python developer.</li>
+                  </ul>
+
+
+                </div>
               </div>
 
               <div className={`tab-conts ${activeTab === 'education' ? 'act-tab' : ''}`} id="education">
                 <ul>
-                  <li><span>May 2023</span><br />BS in Computer Science | Liberty University</li>
-                  <li><span>March 2023</span><br />Certification Responsive Web Design | FreeCodeCamp</li>
+                  <li><span>Sept 2014 - Jul 2018</span><br />BS in Statistics | University of Nigeria Nsukka</li>
                 </ul>
               </div>
             </div>
@@ -170,7 +181,7 @@ function Home() {
           <div>
             <p> COMING SOON...</p>
           </div>
-{/*       
+          {/*       
           <div className='work-list'>
             <div className="work">
               <img src={workpic1} alt='Tactica-ministries' />
@@ -225,10 +236,23 @@ function Home() {
 
             <div className="contact-r">
               <div className="form">
-                <input type="text" name="name" placeholder="Name" onChange={formik.handleChange} value={formik.values.name}/>
-                <input type="email" name="email" placeholder="Email" onChange={formik.handleChange} value={formik.values.email}/>
+                <input type="text" name="name" placeholder="Name" onChange={formik.handleChange} value={formik.values.name} />
+                <span className="error-text">{formik.touched.name && formik.errors.name
+                  ? formik.errors.name
+                  : ''}</span>
+                <input type="email" name="email" placeholder="Email" onChange={formik.handleChange} value={formik.values.email} />
+                <span className="error-text">
+                  {formik.touched.email && formik.errors.email
+                    ? formik.errors.email
+                    : ''}
+                </span>
                 <textarea name="message" id="" rows={6} placeholder="Message" onChange={formik.handleChange} value={formik.values.message}></textarea>
-                <button type="submit" className="btn btncv" onClick={formik.handleSubmit}>{formik.isSubmitting? "loading":"Submit"}</button>
+                <span className="error-text text-area-error">
+                  {formik.touched.message && formik.errors.message
+                    ? formik.errors.message
+                    : ''}
+                </span>
+                <button type="submit" className="btn btncv" onClick={formik.handleSubmit}>{formik.isSubmitting ? "sending..." : "Submit"}</button>
               </div>
               <span id="submit-msg"></span>
             </div>
