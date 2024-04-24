@@ -3,20 +3,15 @@ import "./Home.css"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../../Components/Navbar/Navbar'
-import AbtPic from '/Images/onyekachukwu-pic.jpg'
-import workpic1 from '/Images/tactica.png'
-import workpic2 from '/Images/drontec.png'
-import workpic3 from '/Images/creotec.png'
-import workpic4 from '/Images/cfl.png'
-import workpic5 from '/Images/github-projects.png'
-import workpic6 from '/Images/andres-website.png'
+import AbtPic from '/Images/onyekachukwu-pic-resize.jpg'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode, faPenRuler, faMicrochip, faLink, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import useHandleContactForm from '../../hooks/form/use-handle-contact-form';
 
 function Home() {
-
+  const {formik} = useHandleContactForm();
   // About section functionality
 
   const [activeTab, setActiveTab] = useState('skills');
@@ -52,45 +47,22 @@ function Home() {
 
   // View more functionality
 
-  const [showMore, setShowMore] = useState(false);
+  // const [showMore, setShowMore] = useState(false);
 
-  const handleViewMore = () => {
-    setShowMore(true);
-  };
+  // const handleViewMore = () => {
+  //   setShowMore(true);
+  // };
 
-  const handleHide = () => {
-    setShowMore(false);
-  };
+  // const handleHide = () => {
+  //   setShowMore(false);
+  // };
 
   // Contact form functionality
 
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbyiMFJxNG-Oe1735pct_MGwOk1EhP7t5LKAu9u4KHLdk_NqJIPJiSrXQrbs6Lzco8j7/exec';
-
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-
-    try {
-      const response = await fetch(scriptURL, {
-        method: 'POST',
-        body: formData
-      });
-
-      if (response.ok) {
-        toast.success('Form submitted successfully!')
-        e.target.reset();
-      } else {
-        toast.error('Form submission failed');
-        throw new Error('Failed to submit message');
-      }
-    } catch (error: any) {
-      console.error('Error!', error.message);
-      toast.error('Error', error.message);
-    }
-  };
-
   // Icon library
-
+  if(formik.errors){
+    console.log("FORMIK ERROR ", formik.errors)
+  }
   library.add(faCode, faPenRuler, faMicrochip, faLink, faEnvelope, faInstagram, faLinkedin, faGithub)
 
 
@@ -103,7 +75,9 @@ function Home() {
             <p>Hi, I'm</p>
             <h1>Onyekachukwu Eze</h1>
             <h2>Let's build solutions together.</h2>
-            <a href="#contact" className="header-btn" aria-label='Get-started-button'>Get started</a>
+            <div className='get-in-touch'>
+              <a href="#contact" className="header-btn" aria-label='Get-started-button'>Get In Touch</a>
+            </div>
           </div>
         </div>
       </div>
@@ -117,7 +91,7 @@ function Home() {
             <div className="abt-col-2">
               <h1 className="sub-header">Who am I</h1>
               <p>
-                
+
                 I'm Eze Onyekachukwu, a versatile full-stack developer adept in React Native, Flutter, Python, PHP, Laravel, and Django. Driven by a passion for problem-solving and continuous improvement, I excel in crafting seamless mobile and web solutions. With a keen eye for adaptation, I thrive in dynamic environments, leveraging technologies like React, Angular, and Node.js to deliver excellence. Backed by certifications in Machine Learning and Data Science, I bring a unique blend of analytical insights and technical expertise to every project.
               </p>
 
@@ -193,7 +167,10 @@ function Home() {
       <div className='portfolio-section' id='portfolio'>
         <div className='container'>
           <h1 className='sub-header'>Portfolio</h1>
-
+          <div>
+            <p> COMING SOON...</p>
+          </div>
+{/*       
           <div className='work-list'>
             <div className="work">
               <img src={workpic1} alt='Tactica-ministries' />
@@ -221,43 +198,14 @@ function Home() {
                 <a href="https://creo-tec.com/" target="_blank" rel="noreferrer noopener" aria-label='Creotec-website-link'> <FontAwesomeIcon icon={faLink} /></a>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          {showMore && (
-            <div className="work-list-2">
-              <div className="work">
-                <img src={workpic4} alt='Center-for-financial-literacy' />
-                <div className="layer">
-                  <h3><strong>Center for Financial Literacy App</strong></h3>
-                  <p>CFL App allows you to visualize and budget your finances.</p>
-                  <a href="https://www.linkedin.com/feed/update/urn:li:activity:7061417643429257216/" target="_blank" rel="noreferrer noopener" aria-label='Center-for-financial-literacy-linkedin-link'> <FontAwesomeIcon icon={faLink} /></a>
-                </div>
-              </div>
 
-              <div className="work">
-                <img src={workpic5} alt='Andres-Choque-Github' />
-                <div className="layer">
-                  <h3><strong>School Projects</strong></h3>
-                  <p>Holds a collection of software built for school.</p>
-                  <a href="https://github.com/andreschoque3/LU-School-Projects" target="_blank" rel="noreferrer noopener" aria-label='Andres-choque-github-webpage'> <FontAwesomeIcon icon={faLink} /></a>
-                </div>
-              </div>
 
-              <div className="work">
-                <img src={workpic6} alt='Andres-Choque-website' />
-                <div className="layer">
-                  <h3><strong>Business Website</strong></h3>
-                  <p>The website that showcases all the software & solutions provided.</p>
-                  <a href="https://andreschoque.com/" target="_blank" rel="noreferrer noopener" aria-label='Andres-choque-website-link'> <FontAwesomeIcon icon={faLink} /></a>
-                </div>
-              </div>
-            </div>
-          )}
-
-          <div className="button-container">
+          {/* <div className="button-container">
             {!showMore && <button className="btn" id="view-more" aria-label='View-more-button' onClick={handleViewMore}>View more</button>}
             {showMore && <button className="btn" id="hide" aria-label='Hide-button' onClick={handleHide}>Hide</button>}
-          </div>
+          </div> */}
 
         </div>
       </div>
@@ -269,19 +217,19 @@ function Home() {
               <h1 className="sub-header">Let's Connect</h1>
               <p><FontAwesomeIcon icon={faEnvelope} /> ezeonyekachukwu98@gmail.com</p>
               <div className="social">
-                <a href="https://www.instagram.com/andres.choque23/" target="_blank" rel="noreferrer noopener" aria-label='Andres-choque-instagram-account'><FontAwesomeIcon icon={faInstagram} /></a>
+                <a href="https://www.instagram.com/evaristus_j/" target="_blank" rel="noreferrer noopener" aria-label='Andres-choque-instagram-account'><FontAwesomeIcon icon={faInstagram} /></a>
                 <a href="https://www.linkedin.com/in/onyekachukwu-eze-5107541a2/" target="_blank" rel="noreferrer noopener" aria-label='Andres-choque-linkedin-account'><FontAwesomeIcon icon={faLinkedin} /></a>
                 <a href="https://github.com/junihoj" target="_blank" rel="noreferrer noopener" aria-label='Andres-choque-github-account'><FontAwesomeIcon icon={faGithub} /></a>
               </div>
             </div>
 
             <div className="contact-r">
-              <form name="submit-to-google-sheet" onSubmit={handleSubmit}>
-                <input type="text" name="Name" placeholder="Name" required />
-                <input type="email" name="Email" placeholder="Email" required />
-                <textarea name="Message" id="" rows={6} placeholder="Message"></textarea>
-                <button type="submit" className="btn btncv">Submit</button>
-              </form>
+              <div className="form">
+                <input type="text" name="name" placeholder="Name" onChange={formik.handleChange} value={formik.values.name}/>
+                <input type="email" name="email" placeholder="Email" onChange={formik.handleChange} value={formik.values.email}/>
+                <textarea name="message" id="" rows={6} placeholder="Message" onChange={formik.handleChange} value={formik.values.message}></textarea>
+                <button type="submit" className="btn btncv" onClick={formik.handleSubmit}>{formik.isSubmitting? "loading":"Submit"}</button>
+              </div>
               <span id="submit-msg"></span>
             </div>
 

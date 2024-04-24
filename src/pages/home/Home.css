@@ -6,8 +6,15 @@
     background-size: cover;
     background-position: center;
     background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
-    url(./Images/background-header.jpg);
+    url(./Images/background-header.png);
     position: relative;
+}
+
+.get-in-touch{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    background-color: red;
 }
 
 .container {
@@ -17,6 +24,7 @@
 .header-text {
     margin-top: 20%;
     font-size: 30px;
+    width:100%;
 }
 
 .header-text p {
@@ -326,11 +334,11 @@ strong {
     transform: translateY(-5px);
 }
 
-.contact-r form {
+.contact-r .form {
     width: 100%;
 }
 
-form input, form textarea {
+.form input, .form textarea {
     width: 100%;
     border: 0;
     outline: none;
@@ -342,7 +350,7 @@ form input, form textarea {
     border-radius: 6px;
 }
 
-form .btncv {
+.form .btncv {
     padding: 14px 60px;
     font-size: 18px;
     margin-top: 20px;
@@ -366,6 +374,7 @@ form .btncv {
         margin-top: 100%;
         font-size: 18px;
         margin-right: 40px;
+        width:100%;
     }
 
     .header-text h1 {
