@@ -1,10 +1,10 @@
-import NavBar from "#components/layouts/nav-bar";
-
+import { NavBar } from "#components";
+import Welcome from "#components/welcome";
 const App = () => {
   return (
     <main className="">
       <NavBar />
-      <h1 className="text-white text-3xl font-bold underline">Hello world!</h1>
+      <Welcome />
     </main>
   );
 };
