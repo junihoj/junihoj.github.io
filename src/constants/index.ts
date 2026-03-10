@@ -1,3 +1,5 @@
+import type { TwindowsKey, TwindowState } from "#types";
+
 const navLinks = [
   {
     id: 1,
@@ -492,7 +494,7 @@ export const locations = {
 
 const INITIAL_Z_INDEX = 1000;
 
-const WINDOW_CONFIG = {
+const WINDOW_CONFIG: Record<TwindowsKey, TwindowState> = {
   finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
