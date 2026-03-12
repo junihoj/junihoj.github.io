@@ -79,36 +79,49 @@ const dockApps = [
 const blogPosts = [
   {
     id: 1,
-    date: "Sep 2, 2025",
-    title:
-      "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
-    image: "/images/blog1.png",
-    link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
+    date: "Jul 17, 2025",
+    title: "Every Bug You Fix Is a Lesson Learned, Embrace the Challenge",
+    image: "/images/every-bug-fixed.webp",
+    link: "https://dev.to/junihoj/every-bug-you-fix-is-a-lesson-learned-embrace-the-challenge-1jhp",
   },
   {
     id: 2,
-    date: "Aug 28, 2025",
-    title: "The Ultimate Guide to Mastering Three.js for 3D Development",
-    image: "/images/blog2.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-three-js-for-3d-development",
+    date: "Jul 2, 2025",
+    title: "Understanding API Idempotency: Why It Matters in Backend Design",
+    image: "/images/blog_idempotency.webp",
+    link: "https://dev.to/junihoj/understanding-api-idempotency-why-it-matters-in-backend-design-1cld",
   },
   {
     id: 3,
-    date: "Aug 15, 2025",
-    title: "The Ultimate Guide to Mastering GSAP Animations",
-    image: "/images/blog3.png",
+    date: "Jul 9, 2024",
+    title:
+      "The Perils of Callback Hell: Navigating the Pyramid of Doom in JavaScript",
+    image: "/images/blog_callback_hell.webp",
     link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-gsap-animations",
   },
 ];
 
 const techStack = [
   {
-    category: "Frontend",
-    items: ["React.js", "Next.js", "TypeScript"],
+    category: "Languages",
+    items: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "Dart",
+      "PHP",
+      "",
+    ],
+  },
+  {
+    category: "Frontend Frameworks",
+    items: ["React.js", "Next.js", "TypeScript", "Vuejs", "Angular", "Nuxt.js"],
   },
   {
     category: "Mobile",
-    items: ["React Native", "Expo"],
+    items: ["Flutter", "React Native", "Expo"],
   },
   {
     category: "Styling",
@@ -116,15 +129,26 @@ const techStack = [
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "NestJS", "Hono"],
+    items: [
+      "Node.js",
+      "Express",
+      "NestJS",
+      "Hono",
+      "Elysia",
+      "Fastify",
+      "Django",
+      "Flask",
+      "FastAPI",
+      "Laravel",
+    ],
   },
   {
     category: "Database",
-    items: ["MongoDB", "PostgreSQL"],
+    items: ["MongoDB", "PostgreSQL", "Redis"],
   },
   {
     category: "Dev Tools",
-    items: ["Git", "GitHub", "Docker"],
+    items: ["Git", "GitHub", "Docker", "Rabbitmq", "Nginx", "Postman"],
   },
 ];
 

@@ -1,3 +1,3 @@
 import Terminal from "./terminal";
-
-export { Terminal };
+import Safari from "./safari";
+export { Terminal, Safari };
